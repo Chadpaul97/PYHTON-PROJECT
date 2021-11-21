@@ -1,0 +1,66 @@
+.navbar{
+    background-color: #0046be;
+    height: 100px;
+    display: flex;
+}
+
+h1{
+    color: black;
+}
+
+.homestore{
+    margin-left: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+img{
+    height: 50px;
+}
+
+.contentbox{
+    color: black;
+    padding: 10px;
+    border: 2px solid black;
+    font-size: 25px;
+    width: 1000px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.middlecontent{
+    height: 500px;
+    background-color: #0962c7ab;
+    margin-top: 50px;
+    border: 5px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.middlecontent p{
+    font-size: 100px;
+    
+}
+
+.rotatingimg{
+    width: 1000px;
+    height: 305px;
+    border: 5px black dashed;
+}
+
+.bottomcontent{
+    height: 400px;
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.displaybox{
+    border: 2px solid black;
+    margin: 100px;
+    width: 200px;
+    height: 200px;
+}
