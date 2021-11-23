@@ -1,0 +1,151 @@
+.navbar{
+    background-color: #0046be;
+    border: blue 1px solid;
+    height: 100px;
+}
+
+.homestore h1{
+    font-size: 40px;
+    color: black;
+}
+
+.homestore{
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.homestore img{
+    height: 60px;
+}
+
+.contentbox{
+    color: black;
+    padding: 10px;
+    border: 5px solid black;
+    font-size: 25px;
+    width: 1000px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchbar{
+    border: 2px solid black;
+    font-size: 20px;
+} 
+
+.accountcontent{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.leftside{
+    display: flex;
+    flex-direction: column;
+    border: 2px dashed green;
+    margin: 20px;
+    padding: 50px;
+    height: 750px;
+    width: 850px;
+}
+
+.profilepicture{
+    border: black 3px solid;
+    margin-top: 15px;
+    margin-left: 30px;
+    width: 305px;
+    height: 180px;
+}
+
+#recentpurchase{
+    text-align: left
+}
+
+.balacereward{
+    font-size: 20px;
+    margin: 0px 0px 0px 30px;
+    border-bottom: solid black 3px;
+    width: 305px;
+}
+
+.balacereward p{
+    font-size: 30px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+.personalinfo{
+    width: 500px;
+    padding: 30px;
+}
+
+
+.personalinfo h4{
+    font-size: 30px;
+}
+
+.personalinfo p{
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.change{
+    display: flex;
+    justify-content: space-between;
+}
+.change a{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.rightside{
+    border: dashed 2px black;
+    margin: 20px;
+    padding: 50px;
+    height: 750px;
+    width: 850px;
+}
+
+.purchases{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.purchases p{
+    font-size: 50px;
+    font-weight: bold;
+}
+.purchasebox{
+    border: 2px solid black;
+    margin: 50px;
+    width: 100px;
+    height: 100px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    height: 400px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.btn{
+    margin: 30px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.foot{
+    background-color: #0046be;
+    border: blue .5px solid;
+    height: 57px;
+    width: auto;
+}
+

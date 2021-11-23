@@ -2,7 +2,6 @@
     background-color: #0046be;
     border: blue 1px solid;
     height: 100px;
-    display: flex;
 }
 
 .homestore h1{
@@ -20,7 +19,11 @@
 .homestore img{
     height: 60px;
 }
-
+h2{
+    margin-top: 50px;
+    font-size: 50px;
+    text-align: center;
+}
 .contentbox{
     color: black;
     padding: 10px;
@@ -36,38 +39,33 @@
 .searchbar{
     border: 2px solid black;
     font-size: 20px;
-}
+} 
 
-.middlecontent{
+.contact{
     height: 500px;
-    background-color: #0962c7ab;
-    margin-top: 30px;
-    border: 5px solid black;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contactbox{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bolder;
+    font-size: 40px;
+    margin-top: 100px;
+    height: 250px;
+    width: 250px;
+    border: 3px black solid;
 }
-.middlecontent p{
-    font-size: 100px;
-}
-
-.rotatingimg{
-    width: 1000px;
-    height: 305px;
-    border: 5px black dashed;
-}
-
-.bottomcontent{
-    height: 300px;
-    background-color: lightblue;
+.buttons{
+    margin-right: 100px;
+    height: 100px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    justify-content: right;
+    align-items: flex-start;
+} 
 
-.displaybox{
-    border: 2px solid black;
-    margin: 100px 100px 100px 100px;
-    width: 200px;
-    height: 200px;
+.btn{
+    font-size: 25px;
 }
