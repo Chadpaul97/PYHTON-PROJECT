@@ -22,6 +22,9 @@ def register_user():
             "first_name":request.form["first_name"],
             "last_name":request.form["last_name"],
             "email":request.form["email"],
+            "phonenumber":request.form["phonenumber"],
+            "address":request.form["address"],
+            "balance":request.form["balance"],
             "password":pw_hash
         }
         user_db = User.user_email(data)
@@ -56,7 +59,7 @@ def login_user():
             return redirect("/")
         session["user_id"] = user_db.id
         session["first_name"] = user_db.first_name
-        return redirect("/userpage")
+        return redirect("/main")
     else:
         return redirect("/")
 
@@ -76,8 +79,8 @@ def logout():
 # **************
 @app.route("/main")
 def main():
-    # if "user_id" not in session:
-    #     flash("Must be logged in!")
-    #     return redirect("/")
+    if "user_id" not in session:
+        flash("Must be logged in!")
+        return redirect("/")
     return render_template("main.html")
 

@@ -8,6 +8,9 @@ class User:
         self.first_name = data["first_name"]
         self.last_name = data["last_name"]
         self.email = data["email"]
+        self.phonenumber = data["phonenumber"]
+        self.address = data["address"]
+        self.balance = data["balance"]
         self.password = data["password"]
         self.created_at = data["created_at"]
         self.updated_at = data["updated_at"]
@@ -17,8 +20,8 @@ class User:
 # ***********************
     @classmethod
     def add_user(cls,data):
-        query = "INSERT INTO users (first_name,last_name,email,password) VALUES (%(first_name)s,%(last_name)s,%(email)s,%(password)s)"
-        return connectToMySQL("exam_schema").query_db(query,data)
+        query = "INSERT INTO users (first_name,last_name,email,phonenumber,address,balance,password) VALUES (%(first_name)s,%(last_name)s,%(email)s,%(phonenumber)s,%(address)s,%(balance)s,%(password)s)"
+        return connectToMySQL("python_project").query_db(query,data)
 
 # ***********************
 #  Get Email for Login
@@ -26,7 +29,7 @@ class User:
     @classmethod
     def user_email(cls,data):
         query = "SELECT * FROM users WHERE email=%(email)s"
-        user_db = connectToMySQL("exam_schema").query_db(query,data)
+        user_db = connectToMySQL("python_project").query_db(query,data)
         if len(user_db) < 1:
             return False
         return cls(user_db[0])
@@ -34,7 +37,7 @@ class User:
     @classmethod
     def user_name(cls,data):
         query = "SELECT * FROM users WHERE id = %(id)s"
-        user_db = connectToMySQL("exam_schema").query_db(query,data)
+        user_db = connectToMySQL("python_project").query_db(query,data)
         if len(user_db) < 1:
             return False
         return cls(user_db[0])
@@ -46,6 +49,7 @@ class User:
     @staticmethod
     def validate_form(textinput):
         email_reg = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
+        phone_reg= re.compile(r'/^[0-9]{10,14}$/')
         is_valid = True
         if len(textinput["first_name"]) < 1:
             flash("First name required!")
@@ -57,6 +61,15 @@ class User:
         if not email_reg.match(textinput['email']):
             is_valid = False 
             flash("Invalid email address")
+            is_valid = False
+        if not phone_reg.match(textinput['email']):
+            is_valid = False 
+            flash("Invalid Phone Number")
+        if len(textinput["address"]) < 6: 
+            flash("Address needs to be at least 6 characters")
+            is_valid = False
+        if len(textinput["balance"]) < 1: 
+            flash("Balance needs to be at least 1 Dollar")
             is_valid = False
         if len(textinput["password"]) < 8: 
             flash("Password needs to be at least 8 characters")
