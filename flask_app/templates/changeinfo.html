@@ -11,17 +11,25 @@
     <title>Change Account</title>
 </head>
 
-<body>
+<body class="bg-dark text-white">
     <div class="navbar">
         <div class="homestore">
-            <h1>Home Store</h1>
+            <h1><a href="/main">Home Store</a></h1>
             <img src="{{ url_for('static', filename='images/home.png') }}">
         </div>
         <div class="contentbox">
-            <p>New Products</p>
-            <p>All Departments</p>
-            <p>My Account</p>
-            <p> Cart | 3 items </p>
+            <p class="underline-on-hover"><a href="/newproducts"> New Products</a></p>
+            <div class="dropdown">
+                <button class="dropbtn">All Departments</button>
+                <div class="dropdown-content">
+                    <a href="/newproducts">New Products</a>
+                    <a href="/hotdeals">Hot Deals</a>
+                    <a href="/clearence">Clearence</a>
+                    <a href="/holiday">Holiday</a>
+                </div>
+            </div>
+            <p class="underline-on-hover"><a href="/account">My Account</a> </p>
+            <p class="underline-on-hover"><a href="/cart"> Cart | 3 items </a></p>
         </div>
         <div class="searchbar">
             <form action="searchbar" method="post">
@@ -47,6 +55,8 @@
         <button class="btn btn-info">Contact Us</button>
         <button class="btn btn-danger">Logout</button>
     </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
 </body>
 
 </html>

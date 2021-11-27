@@ -15,6 +15,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    cursor: pointer;
 }
 
 .homestore img{
@@ -22,7 +23,6 @@
 }
 
 .contentbox{
-    color: black;
     padding: 10px;
     border: 5px solid black;
     font-size: 25px;
@@ -32,15 +32,64 @@
     justify-content: space-between;
     align-items: center;
 }
+.contentbox p{
+    cursor: pointer;
+}
+
+.dropbtn {
+    background-color:#0046be;
+    color: white;
+    padding-bottom: 16px;
+    font-weight: bold;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #212529;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.underline-on-hover:hover {
+    text-decoration: underline;
+}
+
+a:hover{
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
 
 .searchbar{
-    border: 2px solid black;
+    border: 4px solid black;
     font-size: 20px;
 }
 
 .middlecontent{
     height: 500px;
-    background-color: #0962c7ab;
+    background-color: #0046be;
     margin-top: 30px;
     border: 5px solid black;
     display: flex;
@@ -49,25 +98,45 @@
 }
 .middlecontent p{
     font-size: 100px;
+    cursor: pointer;
 }
 
-.rotatingimg{
-    width: 1000px;
-    height: 305px;
-    border: 5px black dashed;
+.rotatingbox{
+    border: 6px black solid;
+}
+.rotatingbox img{
+    width: 990px;
+    height: 295px;
 }
 
 .bottomcontent{
-    height: 300px;
-    background-color: lightblue;
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.bottomcontainer{
+    display: flex;
+    gap: 100px;
+    margin-top: 25px;
+}
+
+.bottombox{
+    text-align: center;
+}
+h3{
+    cursor: pointer;
+}
 .displaybox{
-    border: 2px solid black;
-    margin: 100px 100px 100px 100px;
+    margin: 25px 25px 25px 25px;
     width: 200px;
     height: 200px;
+}
+
+.displaybox img{
+    border-radius: 25%;
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
 }

@@ -8,17 +8,25 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='account.css') }}">
     <title>Account</title>
 </head>
-<body>
+<body class="bg-dark text-white">
     <div class="navbar">
         <div class="homestore">
-            <h1>Home Store</h1>
+            <h1><a href="/main">Home Store</a></h1>
             <img src="{{ url_for('static', filename='images/home.png') }}">
         </div>
         <div class="contentbox">
-            <p>New Products</p>
-            <p>All Departments</p>
-            <p>My Account</p>
-            <p> Cart | 3 items </p>
+            <p class="underline-on-hover"><a href="/newproducts"> New Products</a></p>
+            <div class="dropdown">
+                <button class="dropbtn">All Departments</button>
+                <div class="dropdown-content">
+                    <a href="/newproducts">New Products</a>
+                    <a href="/hotdeals">Hot Deals</a>
+                    <a href="/clearence">Clearence</a>
+                    <a href="/holiday">Holiday</a>
+                </div>
+            </div>
+            <p class="underline-on-hover"><a href="/account">My Account</a> </p>
+            <p class="underline-on-hover"><a href="/cart"> Cart | 3 items </a></p>
         </div>
         <div class="searchbar">
             <form action="searchbar" method="post">
@@ -28,12 +36,12 @@
     </div>
     <div class="accountcontent">
         <div class="leftside">
-            <h1>Hi, Chad. Welcome Back!</h1>
+            <h1>Hi, {{session["first_name"]}}. Welcome Back!</h1>
             <div class="profilepicture">
                 <img src="{{ url_for('static', filename='images/profilepic.jpg') }}" width="300">
             </div>
             <div class="balacereward">
-                <p>Balance $1000 <a href="">Add</a>
+                <p>Balance $1000 <a href="/balance" class="underline-on-hover">Add</a>
             </div>
             <div class="balacereward">
                 <p>Reward Points 500</p>
@@ -43,21 +51,21 @@
                     <h4>Defualt Shipping Adress</h4>
                     <div class="change">
                         <p>1000 Street</p>
-                        <a href="">Change</a>
+                        <a href="/changeinfo" class="underline-on-hover">Change</a>
                     </div>
                 </div>
                 <div>
                     <h4>Phone Number</h4>
                     <div class="change">
                         <p>999-999-9999</p>
-                        <a href="">Change</a>
+                        <a href="/changeinfo" class="underline-on-hover">Change</a>
                     </div>
                 </div>
                 <div>
                     <h4>Email Address</h4>
                     <div class="change">
                         <p>Chad@email.com</p>
-                        <a href="">Change</a>
+                        <a href="/changeinfo" class="underline-on-hover">Change</a>
                     </div>
                 </div>
             </div>
@@ -80,11 +88,13 @@
                 <p>></p>
             </div>
             <div class="buttons">
-                <button class="btn btn-info">Contact Us</button>
-                <button class="btn btn-danger">Logout</button>
+                <button class="btn btn-secondary"><a href="/contact"> Contact Us</a></button>
+                <button class="btn btn-danger"><a href="/logout_user">Logout</a> </button>
             </div>
         </div>
     </div>
     <div class="foot"></div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
 </body>
 </html>

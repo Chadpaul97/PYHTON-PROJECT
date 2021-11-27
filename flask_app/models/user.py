@@ -49,7 +49,6 @@ class User:
     @staticmethod
     def validate_form(textinput):
         email_reg = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
-        phone_reg= re.compile(r'/^[0-9]{10,14}$/')
         is_valid = True
         if len(textinput["first_name"]) < 1:
             flash("First name required!")
@@ -62,15 +61,20 @@ class User:
             is_valid = False 
             flash("Invalid email address")
             is_valid = False
-        if not phone_reg.match(textinput['email']):
+        if len(textinput['phonenumber']) < 12:
             is_valid = False 
             flash("Invalid Phone Number")
         if len(textinput["address"]) < 6: 
             flash("Address needs to be at least 6 characters")
             is_valid = False
-        if len(textinput["balance"]) < 1: 
-            flash("Balance needs to be at least 1 Dollar")
+        if textinput["balance"] == '':
+            flash("Need to Put Balance")
             is_valid = False
+        else: 
+            if float(textinput["balance"]) < 1:
+                print(textinput["balance"])
+                flash("Balance needs to be at least 1 Dollar")
+                is_valid = False
         if len(textinput["password"]) < 8: 
             flash("Password needs to be at least 8 characters")
             is_valid = False

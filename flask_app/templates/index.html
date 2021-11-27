@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Login and Registor Page</title>
 </head>
-<body>
+<body class="bg-dark text-white">
     <div class="navbar">
         <div class="homestore">
             <h1>Home Store</h1>
@@ -21,19 +21,19 @@
             <div class="reg">
             <form action="/register_user" method="POST">
                 <label for="first_name">First Name:</label>
-                <input type="text" name="first_name"><br><br>
+                <input type="text" name="first_name"><br>
                 <label for="last_name">Last Name:</label>
-                <input type="text" name="last_name"><br><br>
+                <input type="text" name="last_name"><br>
                 <label for="email">Email:</label>
-                <input type="text" name="email"><br><br>
+                <input type="text" name="email"><br>
                 <label for="phonenumber">Phone Number:</label>
-                <input type="text" name="phonenumber"><br><br>
+                <input type="tel" name="phonenumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
                 <label for="address">Address:</label>
-                <input type="text" name="address"><br><br>
+                <input type="text" name="address"><br>
                 <label for="balance">Starting Balance:</label>
-                <input type="number" name="balance"><br><br>
+                <input type="number" name="balance" step="0.01" min="1"><br>
                 <label for="password">Password:</label>
-                <input type="password" name="password"><br><br>
+                <input type="password" name="password"><br>
                 <label for="confirm_password">Confirm Password:</label>
                 <input type="password" name="confirm_password"><br>
                 <input type="submit" value="Register" class="btn btn-primary">
@@ -53,12 +53,15 @@
             </div>
         </div>
     </div>
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                <p style="color:red">{{message}}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
+    <div class="flashmessage fs-2 text-center">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
 </body>
 </html>
